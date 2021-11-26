@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dan.fragments.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , SecondFragment.FragmentToActivity {
 
 
     private lateinit var binding: ActivityMainBinding
@@ -15,15 +15,16 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val oneFragment = OneFragment("Fragment 1 xdxd")
-        val secondFragment = SecondFragment("Fragment 2 xxdxd")
+        val oneFragment = OneFragment.newInstance("Fragment 1")
+        val secondFragment = SecondFragment.newInstance("Fragment 2")
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment,oneFragment)
-            commit()
-        }
+        //supportFragmentManager.beginTransaction().apply {
+        //    replace(R.id.fragment,oneFragment)
+        //    commit()
+        //}
 
         binding.btnFirstFragment.setOnClickListener{
+
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.fragment,oneFragment)
                 commit()
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
                 commit()
             }
         }
-
     }
+
+
+    override fun communicate(comm: String?) {
+        binding.tvActivity.text = comm
+    }
+
 }
