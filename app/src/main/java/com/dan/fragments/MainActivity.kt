@@ -6,6 +6,7 @@ import com.dan.fragments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val oneFragment = OneFragment()
-        val secondFragment = SecondFragment()
+        val oneFragment = OneFragment("Fragment 1 xdxd")
+        val secondFragment = SecondFragment("Fragment 2 xxdxd")
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment,oneFragment)

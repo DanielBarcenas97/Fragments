@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dan.fragments.databinding.FragmentSecondBinding
 
-class SecondFragment : Fragment() {
+class SecondFragment(private var message: String) : Fragment() {
 
     private lateinit var mBinding: FragmentSecondBinding
 
@@ -15,5 +15,14 @@ class SecondFragment : Fragment() {
         mBinding = FragmentSecondBinding.inflate(inflater, container, false)
         return mBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mBinding.tvSecondText.text = message
+
+    }
+
+
 
 }

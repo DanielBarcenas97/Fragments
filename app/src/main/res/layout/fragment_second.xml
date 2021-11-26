@@ -9,9 +9,10 @@
 
 
     <TextView
+        android:id="@+id/tvSecondText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Fragment"
+        tools:text="Second Fragment"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
