@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dan.fragments.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() , SecondFragment.FragmentToActivity {
+class MainActivity : AppCompatActivity() , FragmentToActivity {
 
 
     private lateinit var binding: ActivityMainBinding
@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() , SecondFragment.FragmentToActivity {
         val view = binding.root
         setContentView(view)
 
-        val oneFragment = OneFragment.newInstance("Fragment 1")
-        val secondFragment = SecondFragment.newInstance("Fragment 2")
+        val oneFragment = OneFragment.newInstance("Fragment 1 xd")
+        val secondFragment = SecondFragment.newInstance("Fragment 2 xd")
 
         //supportFragmentManager.beginTransaction().apply {
         //    replace(R.id.fragment,oneFragment)
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() , SecondFragment.FragmentToActivity {
         binding.btnFirstFragment.setOnClickListener{
 
             supportFragmentManager.beginTransaction().apply {
+                setCustomAnimations(R.anim.top_animation,R.anim.bottom_animation)
                 replace(R.id.fragment,oneFragment)
                 commit()
             }
@@ -39,9 +40,9 @@ class MainActivity : AppCompatActivity() , SecondFragment.FragmentToActivity {
         }
     }
 
-
     override fun communicate(comm: String?) {
         binding.tvActivity.text = comm
     }
+
 
 }

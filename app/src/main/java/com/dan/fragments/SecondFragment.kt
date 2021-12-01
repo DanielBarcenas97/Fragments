@@ -1,18 +1,16 @@
 package com.dan.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.dan.fragments.databinding.FragmentSecondBinding
 
 
 class SecondFragment : Fragment() {
 
-
-    private var mCallback: FragmentToActivity? = null
     private var message : String? = null
 
     companion object{
@@ -24,16 +22,6 @@ class SecondFragment : Fragment() {
             args.putString(MESSAGE,message)
             fragment.arguments = args
             return fragment
-        }
-    }
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try{
-            mCallback =  context as FragmentToActivity
-        }catch (e:Exception){
-            e.printStackTrace()
         }
     }
 
@@ -51,21 +39,35 @@ class SecondFragment : Fragment() {
             message = getString(MESSAGE).toString()
         }
 
+
         mBinding.tvSecondText.text = message
 
         mBinding.btnSecondFragment.setOnClickListener {
-            sendData()
+            sendMessage()
         }
     }
 
+    private fun sendMessage() {
 
-    private fun sendData(){
-        mCallback?.communicate("Hola desde el fragmento 2")
+        if(!mBinding.etMessage.text.isNullOrEmpty()){
+            val bundle = Bundle()
+            bundle.putString(MESSAGE,mBinding.etMessage.text.toString())
+
+            val fragment = ThirdFragment()
+            fragment.arguments = bundle
+
+            fragmentManager?.beginTransaction()?.apply {
+                setCustomAnimations(R.anim.top_animation,0)
+                replace(R.id.fragment,fragment)
+                commit()
+            }
+
+
+        }else{
+            Toast.makeText(requireContext(),"Escribe algo",Toast.LENGTH_SHORT).show()
+        }
+
     }
 
-
-    interface FragmentToActivity {
-        fun communicate(comm: String?)
-    }
 
 }

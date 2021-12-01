@@ -10,11 +10,10 @@ import com.dan.fragments.databinding.FragmentOneBinding
 
 class OneFragment : Fragment() {
 
-    private var mCallback: SecondFragment.FragmentToActivity? = null
+    private var mCallback: FragmentToActivity? = null
 
     companion object{
         private const val MESSAGE = "message"
-
         fun newInstance(message:String):OneFragment{
             val fragment = OneFragment()
             val args = Bundle()
@@ -27,7 +26,7 @@ class OneFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try{
-            mCallback =  context as SecondFragment.FragmentToActivity
+            mCallback =  context as FragmentToActivity
         }catch (e:Exception){
             e.printStackTrace()
         }

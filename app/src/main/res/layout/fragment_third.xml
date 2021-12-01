@@ -1,53 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/container"
-    android:background="#8BC34A"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#D33F3F"
+    android:id="@+id/fragment3"
+    android:layout_height="match_parent"
+    tools:context=".ThirdFragment">
 
 
     <TextView
         android:id="@+id/tvSecondText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Second Fragment"
+        android:layout_marginTop="100dp"
+        android:text="El mensaje que llego fue"
         android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/etMessage"
+    <TextView
+        android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
         android:layout_marginEnd="63dp"
-        android:hint="Escribe algo"
-        android:inputType="text"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondText">
+        app:layout_constraintTop_toBottomOf="@+id/tvSecondText"
+        tools:text="Aqui llegar algo">
 
-    </EditText>
+    </TextView>
 
-    <Button
-        android:id="@+id/btnSecondFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mandar el mensaje"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMessage">
 
-    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
