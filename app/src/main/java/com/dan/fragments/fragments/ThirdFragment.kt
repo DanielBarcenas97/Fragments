@@ -1,11 +1,10 @@
-package com.dan.fragments
+package com.dan.fragments.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dan.fragments.databinding.FragmentSecondBinding
 import com.dan.fragments.databinding.FragmentThirdBinding
 
 class ThirdFragment : Fragment() {

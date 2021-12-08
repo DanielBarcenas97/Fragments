@@ -11,9 +11,9 @@
         android:id="@+id/btnFirstFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="Fragment 1"
+        android:text="Fa 1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +21,18 @@
         android:id="@+id/btnSecondFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:text="Fragment 2"
+        android:layout_marginTop="50dp"
+        android:text="Fa 2"
+        app:layout_constraintEnd_toStartOf="@+id/btnNewActivity"
+        app:layout_constraintStart_toEndOf="@+id/btnFirstFragment"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNewActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="New Activity"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">

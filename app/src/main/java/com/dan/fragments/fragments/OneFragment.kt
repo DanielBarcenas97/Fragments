@@ -1,4 +1,4 @@
-package com.dan.fragments
+package com.dan.fragments.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.dan.fragments.FragmentToActivity
 import com.dan.fragments.databinding.FragmentOneBinding
 
 class OneFragment : Fragment() {
@@ -14,7 +15,7 @@ class OneFragment : Fragment() {
 
     companion object{
         private const val MESSAGE = "message"
-        fun newInstance(message:String):OneFragment{
+        fun newInstance(message:String): OneFragment {
             val fragment = OneFragment()
             val args = Bundle()
             args.putString(MESSAGE,message)

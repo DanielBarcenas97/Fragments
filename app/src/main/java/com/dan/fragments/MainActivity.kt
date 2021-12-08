@@ -1,8 +1,11 @@
 package com.dan.fragments
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dan.fragments.databinding.ActivityMainBinding
+import com.dan.fragments.fragments.OneFragment
+import com.dan.fragments.fragments.SecondFragment
 
 class MainActivity : AppCompatActivity() , FragmentToActivity {
 
@@ -37,6 +40,10 @@ class MainActivity : AppCompatActivity() , FragmentToActivity {
                 replace(R.id.fragment,secondFragment)
                 commit()
             }
+        }
+
+        binding.btnNewActivity.setOnClickListener {
+            startActivity(Intent(this,MainActivity2::class.java))
         }
     }
 
