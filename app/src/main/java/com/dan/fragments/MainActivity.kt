@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.dan.fragments.databinding.ActivityMainBinding
 import com.dan.fragments.fragments.OneFragment
 import com.dan.fragments.fragments.SecondFragment
+import com.dan.fragments.interfaces.FragmentToActivity
 
 class MainActivity : AppCompatActivity() , FragmentToActivity {
 
