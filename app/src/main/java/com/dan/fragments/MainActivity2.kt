@@ -1,5 +1,6 @@
 package com.dan.fragments
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,6 +55,10 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.recyclerView.adapter = mergeAdapter
 
+
+        binding.btnNext.setOnClickListener {
+            startActivity(Intent(this,MainActivity3::class.java))
+        }
 
     }
 
