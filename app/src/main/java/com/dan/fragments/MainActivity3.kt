@@ -3,6 +3,7 @@ package com.dan.fragments
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.dan.fragments.databinding.ActivityMain3Binding
+import com.dan.fragments.datasource.DataSourceImg
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity3 : FragmentActivity() {
@@ -16,22 +17,19 @@ class MainActivity3 : FragmentActivity() {
         binding = ActivityMain3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val listPhotos = DataSourceImg.generatedList
+
         mAdapter = ViewPagerAdapter(this)
+
+        for(photo in listPhotos){
+            mAdapter.addFragment(PhotoFragment.newInstance(photo))
+        }
+
 
         binding.vpPhotos.adapter = mAdapter
 
 
-        val tabLayoutMediator = TabLayoutMediator(binding.tabs, binding.vpPhotos,TabLayoutMediator.TabConfigurationStrategy{ tab,position ->
-            when(position){
-                0 -> {
-                    tab.text = "VP 1"
-                }
-                1 ->{
-                    tab.text = "VP 2"
-                }
-            }
-        })
-
+        val tabLayoutMediator = TabLayoutMediator(binding.tabs, binding.vpPhotos) { _, _ -> }
         tabLayoutMediator.attach()
 
     }
